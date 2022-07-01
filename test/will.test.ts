@@ -116,8 +116,8 @@ contract("Will", (accounts) => {
       "Balance in contract is not equal to set amount"
     );
     assert.isAbove(
-      Number(balanceAfter),
       Number(balanceBefore),
+      Number(balanceAfter),
       "Balance after is not greater than before"
     );
     assert.equal(
