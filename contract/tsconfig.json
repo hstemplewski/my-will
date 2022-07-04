@@ -1,9 +1,11 @@
 {
   "compilerOptions": {
-    "lib": ["ES2018"],
+    "lib": ["ES2018", "DOM"],
     "module": "CommonJS",
-    "target": "ES2018",
+    "moduleResolution": "node",
     "strict": true,
+    "target": "ES2018",
+    "sourceMap": true,
     "esModuleInterop": true,
     "types": ["@types/node", "@types/chai", "@types/mocha"],
     "typeRoots": ["./node_modules/@types", "./types"]
