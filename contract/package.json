@@ -7,10 +7,11 @@
     "test": "test"
   },
   "scripts": {
-    "test": "truffle test",
+    "test": "npx truffle test",
     "generate-types": "npx typechain --target=truffle-v5 'build/contracts/*.json'",
     "generate-types-client": "./node_modules/.bin/typechain --target=web3-v1 './build/contracts/*.json'",
-    "postinstall": "npx truffle compile && yarn generate-types && yarn generate-types-client"
+    "postinstall": "npx truffle compile && yarn generate-types && yarn generate-types-client",
+    "coverage": " npx truffle run coverage"
   },
   "author": "",
   "license": "ISC",

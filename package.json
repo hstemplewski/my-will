@@ -4,9 +4,6 @@
     "packages": [
       "contract",
       "client"
-    ],
-    "nohoist": [
-      "client/**"
     ]
   }
 }

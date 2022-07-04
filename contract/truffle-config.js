@@ -37,7 +37,7 @@ module.exports = {
    *
    * $ truffle test --network <network-name>
    */
-
+  plugins: ["solidity-coverage"],
   networks: {
     // Useful for testing. The `development` name is special - truffle uses it by default
     // if it's defined here and no other network is specified at the command line.
@@ -61,7 +61,7 @@ module.exports = {
     //   websocket: true         // Enable EventEmitter interface for web3 (default: false)
     // },
     //
-    // Useful for deploying to a public network.
+    // Useful for deoying to a public network.
     // Note: It's important to wrap the provider as a function to ensure truffle uses a new provider every time.
     // ropsten: {
     //   provider: () => new HDWalletProvider(mnemonic, `https://ropsten.infura.io/v3/YOUR-PROJECT-ID`),
