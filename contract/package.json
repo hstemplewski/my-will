@@ -9,15 +9,15 @@
   "scripts": {
     "test": "npx truffle test",
     "generate-types": "npx typechain --target=truffle-v5 'build/contracts/*.json'",
-    "generate-types-client": "./node_modules/.bin/typechain --target=web3-v1 './build/contracts/*.json'",
+    "generate-types-client": "./node_modules/.bin/typechain --target=ethers-v5 './build/contracts/*.json'",
     "postinstall": "npx truffle compile && yarn generate-types && yarn generate-types-client",
     "coverage": " npx truffle run coverage"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@typechain/ethers-v5": "^10.1.0",
     "@typechain/truffle-v5": "^8.0.1",
-    "@typechain/web3-v1": "^6.0.1",
     "@types/chai": "^4.3.1",
     "@types/mocha": "^9.1.1",
     "@types/node": "^18.0.0",
