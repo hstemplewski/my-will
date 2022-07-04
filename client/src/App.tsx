@@ -1,23 +1,30 @@
 import React from "react";
 import "./App.css";
+import { useConnection } from "./metamask/context";
 
 function App() {
+  const { connectionState, connect } = useConnection();
+
+  const isError = connectionState.type === "METAMASK_ERROR";
+  const isConnected = connectionState.type === "METAMASK_CONNECTED";
+
+  if (isError) {
+    return <h2>Error: {connectionState.error.message}</h2>;
+  }
+
+  if (isConnected) {
+    return (
+      <>
+        <h2>Your Matamask wallet is connected!</h2>
+        <p>Your wallet address: {connectionState.connection.myWalletAddress}</p>
+      </>
+    );
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <button type="button" onClick={connect}>
+      Connect Metamask
+    </button>
   );
 }
 
