@@ -3,14 +3,17 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { ConnectionProvider } from "./metamask/context";
+import { ContractProvider } from "./contract/context";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ConnectionProvider>
-      <App />
-    </ConnectionProvider>
+    <ContractProvider>
+      <ConnectionProvider>
+        <App />
+      </ConnectionProvider>
+    </ContractProvider>
   </React.StrictMode>
 );

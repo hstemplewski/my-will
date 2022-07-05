@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from "react";
+import { useContract } from "../contract/context";
 import { handleError } from "../error/handleError";
 import { connectMetamask } from "./connectMetamask";
 import { ConnectionState } from "./states";
@@ -26,9 +27,12 @@ export const useProvideConnection = () => {
     type: "NO_METAMASK",
   });
 
+  const { setProvider } = useContract();
+
   const connect = async () => {
     try {
       const connection = await connectMetamask();
+      setProvider(connection.provider);
       setConnectionState({
         type: "METAMASK_CONNECTED",
         connection,
